@@ -8,6 +8,10 @@ The complex office issue with ordering Subway, making life easier.
 
 
     https://github.com/KadirB/subway_challenge/
+
+Pull from ssh:
+
+
     git@github.com:KadirB/subway_challenge.git
 
 ## Basic Commands
