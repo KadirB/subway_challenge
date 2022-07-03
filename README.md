@@ -23,9 +23,11 @@ note: when I say python manage.py it could be python3 manage.py. Unless you run 
 
 - To create a **normal user account**, (Only admins can do) first create a superuser as mentioned below. After that you can run the project by doing:
 
+
         $ python manage.py createsuperuser
 
 - To create a **superuser account**, use this command:
+
 
         $ python manage.py createsuperuser
 
@@ -33,6 +35,7 @@ For convenience, you can keep your normal user logged in on Chrome and your supe
 
 ### Working with the project
 Running the project and working with it.
+
 
         $ python manage.py runserver
 
@@ -50,14 +53,14 @@ NOTE: after going to a magic link the users will be logged in automaticly.
 * Go to the profile where we can see all the users orders (now it will be empty right):
 
 
-    localhost:8000/profile/<username>/<token>
+    localhost:8000/profile/{username}/<token>
 
 ### Meals 
 * In the backend you can choose open or close for a meal. Default is open
 * After creating a meal. Go the following link
 
 
-    localhost:8000/meal/<mealname>/<username>/<token>
+    localhost:8000/meal/{mealname}/{username}/{token}
 
 * Select your options and save.
 * Go back to your profile page again and check.
@@ -67,7 +70,7 @@ NOTE: after going to a magic link the users will be logged in automaticly.
 * After selecting options there is an order you can access it if order is open:
 
 
-    localhost:8000/profile/order/<order-id>/<username>/<token>
+    localhost:8000/profile/order/{order-id}/{username}/{token}
 
 * Play with the open/closed options in the backend to see if it works.
 
