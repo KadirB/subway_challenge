@@ -1,0 +1,16 @@
+html, body{
+    background-color:#F3F4F6 !important;
+}
+
+header{
+    margin-bottom:100px;
+}
+
+.sign-out-btn{
+    position:absolute;
+    right:25px;
+}
+
+.card{
+    margin-bottom:20px;
+}

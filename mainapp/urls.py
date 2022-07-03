@@ -3,8 +3,9 @@ from django.urls import include, path
 from mainapp import views
 
 urlpatterns = [
-    path('index/', views.index, name='home-page'),
-    path('profile/<str:username>/', views.profile, name='profile-page'),
-    path('meal/<str:name>/', views.meal, name='meal-page'),
-    # path('meal/<str:name>/<str:username>/<int:token>/', views.section, name='article-section'),
+    path('logout', views.logout_view, name='logout'),
+    path('', views.home, name='home-page'),
+    path('profile/<str:username>/<str:token>/', views.profile, name='profile-page'),
+    path('profile/order/<int:id>/<str:username>/<str:token>/', views.order, name='order'),
+    path('meal/<str:name>/<str:username>/<str:token>/', views.meal, name='meal-page'),
 ]

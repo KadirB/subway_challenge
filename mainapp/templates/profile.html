@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Profile {% endblock %}</title>
+</head>
+<body>
+  {% block pagecontent %}
+    <p>Welcome back {{ username }}
+    </p>
+      <h4>Previous Orders</h4>
+      <div class="card">
+          <div class="card-body">
+              <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Order #ID</th>
+                      <th scope="col">Meal</th>
+                      <th scope="col">Options</th>
+                      <th scope="col">Open</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for order in orders %}
+                      <tr>
+                          <td>{{ order.pk }}</td>
+                          <td>{{ order.meal.name }}</td>
+                          <td>
+                              {% for option in order.food_option.all %}
+                                  ({{ option.food_type_options.name }}) - {{ option.name }} <br>
+                              {% endfor %}
+                          </td>
+                          <td>{{ order.is_open }}</td>
+                          <td>
+                              {% if order.is_open %}
+                                <a href="{% url 'order' id=order.pk username=username token=token %}">Edit order</a>
+                              {% else %}
+                                Order is closed.
+                              {% endif %}
+                          </td>
+                        </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+          </div>
+        </div>
+  {% endblock %}
+</body>
+</html>
