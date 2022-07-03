@@ -76,7 +76,7 @@ For example create meal in the admin side, fill all the foodtype and foodoptions
 * After selecting options there is an order you can access it if order is open:
 
 
-    localhost:8000/profile/order/{order-id}/{username}/{token}
+        localhost:8000/profile/order/{order-id}/{username}/{token}
 
 
 * Play with the open/closed options in the backend to see if it works.
